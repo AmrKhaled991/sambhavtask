@@ -2,6 +2,10 @@
 class Assets {
   Assets._();
   
+  /// Assets for imagesHpLogo
+  /// assets/images/hpLogo.png
+  static const String imagesHpLogo = "assets/images/hpLogo.png";
+
   /// Assets for imagesIPhoneSlide
   /// assets/images/iPhoneSlide.jpg
   static const String imagesIPhoneSlide = "assets/images/iPhoneSlide.jpg";
@@ -21,5 +25,9 @@ class Assets {
   /// Assets for imagesSliderImage2
   /// assets/images/sliderImage2.jpg
   static const String imagesSliderImage2 = "assets/images/sliderImage2.jpg";
+
+  /// Assets for imagesStar
+  /// assets/images/star.png
+  static const String imagesStar = "assets/images/star.png";
 }
 

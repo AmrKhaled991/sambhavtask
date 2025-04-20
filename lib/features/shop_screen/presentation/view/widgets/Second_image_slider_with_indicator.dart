@@ -39,6 +39,8 @@ class _FirstImageSliderWithIndicatorState
             );
           },
           options: CarouselOptions(
+            autoPlay: true,
+            autoPlayAnimationDuration: Duration(seconds: 2),
             height: 130,
             enlargeCenterPage: true,
             viewportFraction: 0.9,

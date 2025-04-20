@@ -61,7 +61,7 @@ class ProductCard extends StatelessWidget {
           ),
 
           // Favorite Icon (Heart)
-          Positioned(top: 4, right: 4, child: CustomFavButton()),
+          Positioned(top: 15, right: 15, child: CustomFavButton()),
 
           // Add to Cart Icon (bottom right)
           Positioned(

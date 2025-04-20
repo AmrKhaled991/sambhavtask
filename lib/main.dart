@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:sambhavtask/features/product_details_screen/presentation/view/product_details_screen.dart';
 import 'package:sambhavtask/features/shop_screen/presentation/view/shop_screen.dart';
 
 void main() {

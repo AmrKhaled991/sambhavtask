@@ -14,36 +14,7 @@ class MostPopularProduct extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           // Title and See All button
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              Row(
-                children: [
-                  const Text(
-                    'Most Popular Products',
-                    style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
-                  ),
-                  const SizedBox(width: 6),
-                  const Text('🔥', style: TextStyle(fontSize: 16)),
-                ],
-              ),
-              InkWell(
-                onTap: () {
-                  // Navigate to See All screen
-                },
-                child: const Text(
-                  'See All',
-                  style: TextStyle(
-                    fontSize: 14,
-                    color: kPrimaryColor,
-                    fontWeight: FontWeight.bold,
-                    decorationColor: kPrimaryColor,
-                    decoration: TextDecoration.underline,
-                  ),
-                ),
-              ),
-            ],
-          ),
+          SectionSeeAllHeader(header: 'Most Popular Products', onTap: () {},showFireIcon: true,),
           const SizedBox(height: 16),
 
           // Horizontal list
@@ -59,6 +30,52 @@ class MostPopularProduct extends StatelessWidget {
           ),
         ],
       ),
+    );
+  }
+}
+
+class SectionSeeAllHeader extends StatelessWidget {
+  final String header;
+  final VoidCallback? onTap;
+  bool showFireIcon;
+  SectionSeeAllHeader({
+    super.key,
+    required this.header,
+    required this.onTap,
+    this.showFireIcon = false,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      children: [
+        Row(
+          children: [
+            const Text(
+              'Most Popular Products',
+              style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+            ),
+            const SizedBox(width: 6),
+            if (showFireIcon) ...[
+              const Text('🔥', style: TextStyle(fontSize: 16)),
+            ],
+          ],
+        ),
+        InkWell(
+          onTap: onTap,
+          child: const Text(
+            'See All',
+            style: TextStyle(
+              fontSize: 14,
+              color: kPrimaryColor,
+              fontWeight: FontWeight.bold,
+              decorationColor: kPrimaryColor,
+              decoration: TextDecoration.underline,
+            ),
+          ),
+        ),
+      ],
     );
   }
 }
