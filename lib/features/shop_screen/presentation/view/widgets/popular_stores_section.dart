@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:sambhavtask/features/shop_screen/presentation/view/widgets/most_popular_product.dart';
 import 'package:sambhavtask/features/shop_screen/presentation/view/widgets/popular_stores_card.dart';
+import 'package:sambhavtask/features/widgets/section_see_all_header.dart';
 
 class PopularStoresSection extends StatelessWidget {
   const PopularStoresSection({super.key});
