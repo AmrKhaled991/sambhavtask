@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:sambhavtask/constant.dart';
-import 'package:sambhavtask/features/shop_screen/presentation/view/shop_screen.dart';
 import 'package:sambhavtask/features/shop_screen/presentation/view/widgets/product_card.dart';
 
 class MostPopularProduct extends StatelessWidget {

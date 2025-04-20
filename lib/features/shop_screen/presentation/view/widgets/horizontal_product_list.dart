@@ -70,21 +70,32 @@ class HorizontalProductList extends StatelessWidget {
                   padding: const EdgeInsets.only(right: 12.0),
                   child: Column(
                     children: [
-                      Container(
-                        width: 70,
-                        height: 70,
-                        decoration: BoxDecoration(
-                          color: kPrimaryColor.withOpacity(0.3),
-                          borderRadius: BorderRadius.circular(16),
-                        ),
-                        child: Center(
-                          child: Text(
-                            "+${(items.length - 8).toString()}",
-                            style: Styles.textSemiBold20().copyWith(
-                              color: Colors.white,
+                      Stack(
+                        children: [
+                          SizedBox(
+                            width: 70,
+                            height: 70,
+                            child: Center(
+                              child: Image.asset(items[9]['image']!, width: 40),
                             ),
                           ),
-                        ),
+                          Container(
+                            width: 70,
+                            height: 70,
+                            decoration: BoxDecoration(
+                              color: kPrimaryColor.withOpacity(0.3),
+                              borderRadius: BorderRadius.circular(16),
+                            ),
+                            child: Center(
+                              child: Text(
+                                "+${(items.length - 8).toString()}",
+                                style: Styles.textSemiBold20().copyWith(
+                                  color: Colors.white,
+                                ),
+                              ),
+                            ),
+                          ),
+                        ],
                       ),
                       const SizedBox(height: 6),
                       const Text(
