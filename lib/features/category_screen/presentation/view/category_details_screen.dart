@@ -4,17 +4,10 @@ import 'package:flutter/material.dart';
 import 'package:sambhavtask/constant.dart';
 import 'package:sambhavtask/features/category_screen/presentation/view/widgets/category_sote_list.dart';
 import 'package:sambhavtask/features/category_screen/presentation/view/widgets/items_tab.dart';
+import 'package:sambhavtask/features/widgets/filter_selector.dart';
 
-class CategoryDetailsScreen extends StatefulWidget {
+class CategoryDetailsScreen extends StatelessWidget {
   const CategoryDetailsScreen({super.key});
-
-  @override
-  State<CategoryDetailsScreen> createState() => _CategoryDetailsScreenState();
-}
-
-class _CategoryDetailsScreenState extends State<CategoryDetailsScreen> {
-  int selectedCategory = 0;
-  final List<String> categories = ['All', 'Men\'s Footwear', 'Men\'s Clothing'];
 
   @override
   Widget build(BuildContext context) {
@@ -51,36 +44,7 @@ class _CategoryDetailsScreenState extends State<CategoryDetailsScreen> {
           children: [
             Padding(
               padding: const EdgeInsets.only(left: 10.0),
-              child: Row(
-                children: List.generate(categories.length, (index) {
-                  bool isSelected = selectedCategory == index;
-                  return GestureDetector(
-                    onTap: () => setState(() => selectedCategory = index),
-                    child: Container(
-                      margin: const EdgeInsets.only(right: 8),
-                      padding: const EdgeInsets.symmetric(
-                        horizontal: 16,
-                        vertical: 8,
-                      ),
-                      decoration: BoxDecoration(
-                        color:
-                            isSelected
-                                ? kPrimaryColor.withAlpha(50)
-                                : Colors.transparent,
-                        borderRadius: BorderRadius.circular(10),
-                      ),
-                      child: Text(
-                        categories[index],
-                        style: TextStyle(
-                          color: isSelected ? Colors.green : Colors.black,
-                          fontWeight:
-                              isSelected ? FontWeight.bold : FontWeight.normal,
-                        ),
-                      ),
-                    ),
-                  );
-                }),
-              ),
+              child: FilterSelector(),
             ),
             const TabBar(
               dividerColor: Colors.transparent,
@@ -95,7 +59,7 @@ class _CategoryDetailsScreenState extends State<CategoryDetailsScreen> {
                   // Items Tab
                   AllProductsList(hasOffer: true),
                   // Stores Tab
-                  CategoryStoreList( showStars: true,),
+                  CategoryStoreList(showStars: true),
                 ],
               ),
             ),
@@ -105,3 +69,5 @@ class _CategoryDetailsScreenState extends State<CategoryDetailsScreen> {
     );
   }
 }
+
+//
