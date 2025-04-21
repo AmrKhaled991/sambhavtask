@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:sambhavtask/constant.dart';
 import 'package:sambhavtask/core/utils/theme/Styles.dart';
 import 'package:sambhavtask/features/product_details_screen/presentation/view/widgets/item_info.dart';
@@ -52,8 +53,10 @@ class _ProductDetailsScreenState extends State<ProductDetailsScreen> {
         centerTitle: true,
         title: Text("Item Details", style: Styles.textSemiBold18()),
         leading: IconButton(
-          icon: Icon(Icons.arrow_back, color: Colors.black),
-          onPressed: () {},
+          icon: Icon(Icons.arrow_back_ios_rounded, color: Colors.black),
+          onPressed: () {
+            context.pop();
+          },
         ),
         actions: [CustomCartIcon()],
       ),

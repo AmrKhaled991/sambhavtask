@@ -1,6 +1,8 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:sambhavtask/constant.dart';
+import 'package:sambhavtask/core/utils/navigation/goRouter.dart';
 import 'package:sambhavtask/core/utils/theme/Styles.dart';
 import 'package:sambhavtask/core/utils/theme/appAssets.dart';
 import 'package:sambhavtask/features/shop_screen/presentation/view/shop_screen.dart';
@@ -32,12 +34,15 @@ class _FirstImageSliderWithIndicatorState
         CarouselSlider.builder(
           itemCount: imageList.length,
           itemBuilder: (context, index, realIndex) {
-            return Container(
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(16),
-                image: DecorationImage(
-                  image: AssetImage(imageList[index]),
-                  fit: BoxFit.cover,
+            return InkWell(
+              onTap: () => context.push(AppRouter.slideDetails2),
+              child: Container(
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(16),
+                  image: DecorationImage(
+                    image: AssetImage(imageList[index]),
+                    fit: BoxFit.cover,
+                  ),
                 ),
               ),
             );

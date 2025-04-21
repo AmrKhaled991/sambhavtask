@@ -22,8 +22,8 @@ class SectionSeeAllHeader extends StatelessWidget {
       children: [
         Row(
           children: [
-            const Text(
-              'Most Popular Products',
+            Text(
+              header,
               style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
             ),
             const SizedBox(width: 6),

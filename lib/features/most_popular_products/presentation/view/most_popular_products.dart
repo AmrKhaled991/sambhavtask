@@ -30,7 +30,7 @@ class CustomRowAppBar extends StatelessWidget implements PreferredSizeWidget {
   Widget build(BuildContext context) {
     return Container(
       color: Colors.white,
-      padding: const EdgeInsets.only(left: 8, right: 8), // لحساب SafeArea
+      padding: const EdgeInsets.only(top: 20), // لحساب SafeArea
       child: Column(
         mainAxisSize: MainAxisSize.min,
         children: [

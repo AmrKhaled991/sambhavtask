@@ -1,7 +1,9 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:sambhavtask/constant.dart';
 import 'package:sambhavtask/core/utils/helpers/context.dart';
+import 'package:sambhavtask/core/utils/navigation/goRouter.dart';
 import 'package:sambhavtask/core/utils/theme/Styles.dart';
 import 'package:sambhavtask/core/utils/theme/appAssets.dart';
 import 'package:sambhavtask/features/shop_screen/presentation/view/widgets/highlight_card.dart';
@@ -50,7 +52,10 @@ class _HighlightsSectionState extends State<HighlightsSection> {
         CarouselSlider.builder(
           itemCount: 3,
           itemBuilder: (context, index, realIndex) {
-            return HighlightCard();
+            return InkWell(
+              onTap: () => context.push(AppRouter.slideDetails2),
+              child: HighlightCard(),
+            );
           },
           options: CarouselOptions(
             autoPlay: true,

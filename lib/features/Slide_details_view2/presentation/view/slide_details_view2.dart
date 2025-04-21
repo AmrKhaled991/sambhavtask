@@ -56,6 +56,7 @@ class SlideDetailsView2 extends StatelessWidget {
                 SliverToBoxAdapter(child: RatingLocationTimeSection()),
                 SliverAppBar(
                   pinned: true,
+                  leading: SizedBox(),
                   backgroundColor: Colors.white,
                   toolbarHeight: 120,
                   expandedHeight: 120,
