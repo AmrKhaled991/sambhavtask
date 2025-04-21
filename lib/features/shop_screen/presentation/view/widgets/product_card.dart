@@ -4,7 +4,8 @@ import 'package:sambhavtask/features/widgets/custom_fav_button.dart';
 import 'package:skeletonizer/skeletonizer.dart';
 
 class ProductCard extends StatelessWidget {
-  const ProductCard({super.key});
+  final bool hasOffer;
+  const ProductCard({super.key, this.hasOffer = false});
 
   @override
   Widget build(BuildContext context) {
@@ -61,7 +62,24 @@ class ProductCard extends StatelessWidget {
           ),
 
           // Favorite Icon (Heart)
-          Positioned(top: 4, right: 4, child: CustomFavButton()),
+          Positioned(top: 15, right: 15, child: CustomFavButton()),
+          if (hasOffer) ...[
+            Positioned(
+              top: 12,
+              left: 10,
+              child: Container(
+                padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
+                decoration: BoxDecoration(
+                  color: Colors.red,
+                  borderRadius: BorderRadius.circular(25),
+                ),
+                child: const Text(
+                  '25.0% OFF',
+                  style: TextStyle(color: Colors.white, fontSize: 8),
+                ),
+              ),
+            ),
+          ],
 
           // Add to Cart Icon (bottom right)
           Positioned(
@@ -76,8 +94,8 @@ class ProductCard extends StatelessWidget {
                   topLeft: Radius.circular(16),
                 ),
               ),
-              child: const Icon(
-                Icons.add_shopping_cart_rounded,
+              child: Icon(
+                hasOffer ? Icons.add : Icons.add_shopping_cart_rounded,
                 color: Colors.white,
                 size: 20,
               ),

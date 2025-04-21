@@ -1,11 +1,8 @@
-
 import 'package:flutter/material.dart';
 import 'package:sambhavtask/constant.dart';
 
 class CustomFavButton extends StatefulWidget {
-  const CustomFavButton({
-    super.key,
-  });
+  const CustomFavButton({super.key});
 
   @override
   State<CustomFavButton> createState() => _CustomFavButtonState();
@@ -15,15 +12,15 @@ class _CustomFavButtonState extends State<CustomFavButton> {
   bool isFav = false;
   @override
   Widget build(BuildContext context) {
-    return IconButton(
-      icon: Icon(
-      isFav ?  Icons.favorite : Icons.favorite_border,
+    return InkWell(
+      child: Icon(
+        isFav ? Icons.favorite : Icons.favorite_border,
         color: kPrimaryColor,
       ),
-      onPressed: () {
+      onTap: () {
         setState(() {
           isFav = !isFav;
-        }); 
+        });
       },
     );
   }

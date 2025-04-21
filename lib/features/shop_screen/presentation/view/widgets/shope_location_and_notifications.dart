@@ -3,13 +3,13 @@ import 'package:sambhavtask/core/utils/theme/Styles.dart';
 import 'package:sambhavtask/core/utils/theme/appAssets.dart';
 
 class ShopeLocationAndNotifications extends StatelessWidget {
-  const ShopeLocationAndNotifications({
-    super.key,
-  });
+  const ShopeLocationAndNotifications({super.key});
 
   @override
   Widget build(BuildContext context) {
     return ListTile(
+      tileColor: Colors.white,
+
       title: Text('Your location', style: Styles.textSemiBold16()),
       subtitle: Text('alexandria ,egypt', style: Styles.textRegular12()),
       leading: Image.asset(Assets.imagesOption, width: 25),
