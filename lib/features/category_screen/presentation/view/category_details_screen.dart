@@ -93,7 +93,7 @@ class _CategoryDetailsScreenState extends State<CategoryDetailsScreen> {
               child: const TabBarView(
                 children: [
                   // Items Tab
-                  ItemsTab(),
+                  AllProductsList(hasOffer: true),
                   // Stores Tab
                   CategoryStoreList(),
                 ],

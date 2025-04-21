@@ -5,8 +5,9 @@ import 'package:sambhavtask/constant.dart';
 import 'package:sambhavtask/core/utils/theme/appAssets.dart';
 import 'package:sambhavtask/features/widgets/custom_fav_button.dart';
 
-class ItemsTab extends StatelessWidget {
-  const ItemsTab({super.key});
+class AllProductsList extends StatelessWidget {
+  final bool hasOffer;
+  const AllProductsList({super.key, this.hasOffer = false});
 
   @override
   Widget build(BuildContext context) {
@@ -76,23 +77,25 @@ class ItemsTab extends StatelessWidget {
               ),
 
               // Discount Badge
-              Positioned(
-                top: 10,
-                right: -15,
-                child: Transform.rotate(
-                  angle: 0.785398, // 45 degrees in radians
-                  child: Container(
-                    width: 80,
-                    color: Colors.red[400],
-                    padding: const EdgeInsets.symmetric(vertical: 2),
-                    alignment: Alignment.center,
-                    child: const Text(
-                      '10.6% OFF',
-                      style: TextStyle(color: Colors.white, fontSize: 10),
+              if (hasOffer) ...[
+                Positioned(
+                  top: 10,
+                  right: -15,
+                  child: Transform.rotate(
+                    angle: 0.785398, // 45 degrees in radians
+                    child: Container(
+                      width: 80,
+                      color: Colors.red[400],
+                      padding: const EdgeInsets.symmetric(vertical: 2),
+                      alignment: Alignment.center,
+                      child: const Text(
+                        '10.6% OFF',
+                        style: TextStyle(color: Colors.white, fontSize: 10),
+                      ),
                     ),
                   ),
                 ),
-              ),
+              ],
               // Favorite Icon
               const Positioned(top: 10, left: 10, child: CustomFavButton()),
 
