@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:sambhavtask/constant.dart';
+import 'package:sambhavtask/core/utils/navigation/goRouter.dart';
 import 'package:sambhavtask/core/utils/theme/Styles.dart';
 import 'package:sambhavtask/core/utils/theme/appAssets.dart';
 
-class HorizontalProductList extends StatelessWidget {
-  const HorizontalProductList({super.key});
+class HorizontalCategoriesList extends StatelessWidget {
+  const HorizontalCategoriesList({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -36,35 +38,35 @@ class HorizontalProductList extends StatelessWidget {
               // Normal Item
               return Padding(
                 padding: const EdgeInsets.only(right: 12.0),
-                child: Column(
-                  children: [
-                    Container(
-                      width: 70,
-                      height: 70,
-                      decoration: BoxDecoration(
-                        color: Colors.grey[200],
-                        borderRadius: BorderRadius.circular(16),
+                child: InkWell(
+                  onTap: () => context.push(AppRouter.categoryDetails),
+                  child: Column(
+                    children: [
+                      Container(
+                        width: 70,
+                        height: 70,
+                        decoration: BoxDecoration(
+                          color: Colors.grey[200],
+                          borderRadius: BorderRadius.circular(16),
+                        ),
+                        child: Center(
+                          child: Image.asset(items[index]['image']!, width: 40),
+                        ),
                       ),
-                      child: Center(
-                        child: Image.asset(items[index]['image']!, width: 40),
+                      const SizedBox(height: 6),
+                      Text(
+                        items[index]['name']!,
+                        style: const TextStyle(fontSize: 12),
                       ),
-                    ),
-                    const SizedBox(height: 6),
-                    Text(
-                      items[index]['name']!,
-                      style: const TextStyle(fontSize: 12),
-                    ),
-                  ],
+                    ],
+                  ),
                 ),
               );
             } else {
               // "+4" Last Special Item
               return GestureDetector(
                 onTap: () {
-                  // Navigator.push(
-                  //   context,
-                  //   MaterialPageRoute(builder: (_) => const AllProductsScreen()),
-                  // );
+                  context.push(AppRouter.allCategories);
                 },
                 child: Padding(
                   padding: const EdgeInsets.only(right: 12.0),

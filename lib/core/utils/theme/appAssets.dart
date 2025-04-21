@@ -2,6 +2,10 @@
 class Assets {
   Assets._();
   
+  /// Assets for imagesHpLogo
+  /// assets/images/hpLogo.png
+  static const String imagesHpLogo = "assets/images/hpLogo.png";
+
   /// Assets for imagesIPhoneSlide
   /// assets/images/iPhoneSlide.jpg
   static const String imagesIPhoneSlide = "assets/images/iPhoneSlide.jpg";
@@ -14,6 +18,10 @@ class Assets {
   /// assets/images/product.png
   static const String imagesProduct = "assets/images/product.png";
 
+  /// Assets for imagesSale
+  /// assets/images/sale.png
+  static const String imagesSale = "assets/images/sale.png";
+
   /// Assets for imagesSliderImage1
   /// assets/images/sliderImage1.jpg
   static const String imagesSliderImage1 = "assets/images/sliderImage1.jpg";
@@ -21,5 +29,9 @@ class Assets {
   /// Assets for imagesSliderImage2
   /// assets/images/sliderImage2.jpg
   static const String imagesSliderImage2 = "assets/images/sliderImage2.jpg";
+
+  /// Assets for imagesStar
+  /// assets/images/star.png
+  static const String imagesStar = "assets/images/star.png";
 }
 

@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
+import 'package:sambhavtask/core/utils/navigation/goRouter.dart';
 import 'package:sambhavtask/core/utils/theme/Styles.dart';
 
 class shopeSearch extends StatelessWidget {
@@ -9,7 +11,9 @@ class shopeSearch extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 14),
       child: InkWell(
-        onTap: () {},
+        onTap: () {
+          context.push(AppRouter.search);
+        },
         child: Container(
           height: 50,
           decoration: BoxDecoration(
