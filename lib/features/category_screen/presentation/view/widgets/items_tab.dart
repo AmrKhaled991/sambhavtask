@@ -7,11 +7,20 @@ import 'package:sambhavtask/features/widgets/custom_fav_button.dart';
 
 class AllProductsList extends StatelessWidget {
   final bool hasOffer;
-  const AllProductsList({super.key, this.hasOffer = false});
+  final bool scrollable;
+  const AllProductsList({
+    super.key,
+    this.hasOffer = false,
+    this.scrollable = true,
+  });
 
   @override
   Widget build(BuildContext context) {
     return ListView.builder(
+      physics:
+          scrollable
+              ? const BouncingScrollPhysics()
+              : const NeverScrollableScrollPhysics(),
       padding: const EdgeInsets.all(12),
       itemCount: 10,
       itemBuilder: (context, index) {

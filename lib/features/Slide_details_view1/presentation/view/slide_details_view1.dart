@@ -4,9 +4,10 @@ import 'package:sambhavtask/core/utils/helpers/context.dart';
 import 'package:sambhavtask/core/utils/theme/appAssets.dart';
 import 'package:sambhavtask/features/Slide_details_view1/presentation/view/widgets/info_section.dart';
 import 'package:sambhavtask/features/category_screen/presentation/view/widgets/category_sote_list.dart';
+import 'package:sambhavtask/features/widgets/green_back_icon.dart';
 
-class PromoScreen extends StatelessWidget {
-  const PromoScreen({super.key});
+class SlideDetailsView1 extends StatelessWidget {
+  const SlideDetailsView1({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -37,30 +38,13 @@ class PromoScreen extends StatelessWidget {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    InkWell(
-                      child: Container(
-                        padding: const EdgeInsets.all(10),
-                        decoration: BoxDecoration(
-                          shape: BoxShape.circle,
-                          color: Colors.green,
-                        ),
-                        child: Icon(
-                          Icons.arrow_back_ios_new_rounded,
-                          color: Colors.white,
-                          size: 15,
-                        ),
-                      ),
-                      onTap: () {
-                        Navigator.pop(context);
-                      },
-                    ),
+                    GreenBackIcon(),
                   ],
                 ),
               ),
             ],
           ),
           // You can continue adding other widgets here if needed
-
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 10.0),
             child: infoSection(),
