@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:sambhavtask/features/category_screen/presentation/view/category_details_screen.dart';
 import 'package:sambhavtask/features/search_screen/presentation/view/search_screen.dart';
 import 'package:sambhavtask/features/shop_screen/presentation/view/shop_screen.dart';
 
@@ -33,7 +34,7 @@ class MyApp extends StatelessWidget {
         // tested with just a hot reload.
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
       ),
-      home: const ShopScreen(),
+      home: const CategoryDetailsScreen(),
     );
   }
 }
