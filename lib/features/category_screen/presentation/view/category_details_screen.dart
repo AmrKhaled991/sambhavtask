@@ -95,7 +95,7 @@ class _CategoryDetailsScreenState extends State<CategoryDetailsScreen> {
                   // Items Tab
                   AllProductsList(hasOffer: true),
                   // Stores Tab
-                  CategoryStoreList(),
+                  CategoryStoreList( showStars: true,),
                 ],
               ),
             ),
