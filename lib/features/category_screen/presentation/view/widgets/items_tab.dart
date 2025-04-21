@@ -83,16 +83,12 @@ class ItemsTab extends StatelessWidget {
                   angle: 0.785398, // 45 degrees in radians
                   child: Container(
                     width: 80,
-                    color: Colors.red,
+                    color: Colors.red[400],
                     padding: const EdgeInsets.symmetric(vertical: 2),
                     alignment: Alignment.center,
                     child: const Text(
                       '10.6% OFF',
-                      style: TextStyle(
-                        color: Colors.white,
-                        fontSize: 10,
-                        fontWeight: FontWeight.bold,
-                      ),
+                      style: TextStyle(color: Colors.white, fontSize: 10),
                     ),
                   ),
                 ),
