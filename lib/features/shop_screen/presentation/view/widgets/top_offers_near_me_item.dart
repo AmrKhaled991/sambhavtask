@@ -9,7 +9,7 @@ class TopOffersNearMeItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: MediaQuery.of(context).size.width * 0.7,
+      width: 280,
       margin: const EdgeInsets.only(right: 10),
       child: Card(
         color: Colors.white,
@@ -54,6 +54,7 @@ class TopOffersNearMeItem extends StatelessWidget {
                                 style: TextStyle(
                                   fontSize: 12,
                                   color: kPrimaryColor,
+                                  overflow: TextOverflow.ellipsis,
                                 ),
                               ),
                             ],

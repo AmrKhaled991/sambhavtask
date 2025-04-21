@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:sambhavtask/constant.dart';
+import 'package:sambhavtask/core/utils/helpers/context.dart';
 import 'package:sambhavtask/core/utils/theme/appAssets.dart';
 import 'package:sambhavtask/features/widgets/custom_fav_button.dart';
 
@@ -20,58 +21,51 @@ class HighlightCard extends StatelessWidget {
       ),
       child: Column(
         children: [
-          SizedBox(
-            width: double.maxFinite,
-            child: Column(
-              children: [
-                Stack(
-                  children: [
-                    ClipRRect(
-                      borderRadius: BorderRadius.only(
-                        topLeft: Radius.circular(7),
-                        topRight: Radius.circular(7),
-                      ),
-
-                      child: Image.asset(
-                        Assets.imagesSliderImage2,
-                        height: 180,
-                        width: double.maxFinite, // Replace with actual asset
-                        fit: BoxFit.cover,
-                      ),
+          Column(
+            children: [
+              Stack(
+                children: [
+                  ClipRRect(
+                    borderRadius: BorderRadius.only(
+                      topLeft: Radius.circular(7),
+                      topRight: Radius.circular(7),
                     ),
 
-                    Positioned(
-                      bottom: 5,
-                      right: 5,
+                    child: Image.asset(
+                      Assets.imagesSliderImage2,
+                      height: 150,
+                      width: double.maxFinite, // Replace with actual asset
+                      fit: BoxFit.cover,
+                    ),
+                  ),
 
-                      child: Container(
-                        decoration: BoxDecoration(
-                          color: kPrimaryColor,
-                          borderRadius: BorderRadius.circular(25),
-                          border: Border.all(color: Colors.white, width: 2),
-                        ),
-                        padding: const EdgeInsets.all(8),
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            const Icon(
-                              Icons.star,
-                              color: Colors.white,
-                              size: 18,
-                            ),
-                            const SizedBox(width: 4),
-                            const Text(
-                              '0.0 (0)',
-                              style: TextStyle(color: Colors.white),
-                            ),
-                          ],
-                        ),
+                  Positioned(
+                    bottom: 5,
+                    right: 5,
+
+                    child: Container(
+                      decoration: BoxDecoration(
+                        color: kPrimaryColor,
+                        borderRadius: BorderRadius.circular(25),
+                        border: Border.all(color: Colors.white, width: 2),
+                      ),
+                      padding: const EdgeInsets.all(8),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          const Icon(Icons.star, color: Colors.white, size: 18),
+                          const SizedBox(width: 4),
+                          const Text(
+                            '0.0 (0)',
+                            style: TextStyle(color: Colors.white),
+                          ),
+                        ],
                       ),
                     ),
-                  ],
-                ),
-              ],
-            ),
+                  ),
+                ],
+              ),
+            ],
           ),
           Padding(
             padding: EdgeInsets.all(12),
@@ -104,7 +98,7 @@ class HighlightCard extends StatelessWidget {
                           style: TextStyle(fontWeight: FontWeight.w600),
                         ),
                         SizedBox(
-                          width: MediaQuery.of(context).size.width * 0.65,
+                          width: MediaQuery.of(context).size.width * 0.4,
                           child: Text(
                             'Upgrade your kitchen with our selection of top-quality appliances.',
                             maxLines: 2,

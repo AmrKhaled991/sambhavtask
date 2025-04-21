@@ -1,6 +1,7 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:sambhavtask/constant.dart';
+import 'package:sambhavtask/core/utils/helpers/context.dart';
 import 'package:sambhavtask/core/utils/theme/Styles.dart';
 import 'package:sambhavtask/core/utils/theme/appAssets.dart';
 import 'package:sambhavtask/features/shop_screen/presentation/view/widgets/highlight_card.dart';
@@ -53,6 +54,7 @@ class _HighlightsSectionState extends State<HighlightsSection> {
           },
           options: CarouselOptions(
             autoPlay: true,
+            height: 250,
             autoPlayAnimationDuration: Duration(seconds: 3),
             enlargeCenterPage: false,
             viewportFraction: 1,
