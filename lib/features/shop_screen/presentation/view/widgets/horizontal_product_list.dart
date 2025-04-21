@@ -3,8 +3,8 @@ import 'package:sambhavtask/constant.dart';
 import 'package:sambhavtask/core/utils/theme/Styles.dart';
 import 'package:sambhavtask/core/utils/theme/appAssets.dart';
 
-class HorizontalProductList extends StatelessWidget {
-  const HorizontalProductList({super.key});
+class HorizontalCategoriesList extends StatelessWidget {
+  const HorizontalCategoriesList({super.key});
 
   @override
   Widget build(BuildContext context) {
