@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:sambhavtask/features/Slide_details_view1/presentation/view/slide_details_view1.dart';
 import 'package:sambhavtask/features/category_screen/presentation/view/category_details_screen.dart';
 import 'package:sambhavtask/features/most_popular_products/presentation/view/most_popular_products.dart';
 import 'package:sambhavtask/features/search_screen/presentation/view/search_screen.dart';
@@ -35,7 +36,7 @@ class MyApp extends StatelessWidget {
         // tested with just a hot reload.
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
       ),
-      home:  MostPopularProducts(),
+      home: PromoScreen(),
     );
   }
 }

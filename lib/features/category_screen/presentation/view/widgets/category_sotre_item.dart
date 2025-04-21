@@ -6,7 +6,8 @@ import 'package:sambhavtask/features/widgets/custom_fav_button.dart';
 import 'package:sambhavtask/features/widgets/text_with_widget_row.dart';
 
 class CategoryStoreItem extends StatelessWidget {
-  const CategoryStoreItem({super.key});
+   final bool showStars ;
+  const CategoryStoreItem({super.key, this.showStars = false});
 
   @override
   Widget build(BuildContext context) {
@@ -95,7 +96,7 @@ class CategoryStoreItem extends StatelessWidget {
               ],
             ),
           ),
-          Positioned(right: 15, bottom: 70, child: StarRating()),
+          if (showStars) Positioned(right: 15, bottom: 70, child: StarRating()),
         ],
       ),
     );
