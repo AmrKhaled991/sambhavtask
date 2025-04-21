@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
+import 'package:sambhavtask/core/utils/navigation/goRouter.dart';
 import 'package:sambhavtask/features/shop_screen/presentation/view/widgets/shope_search.dart';
 
 class SearchHeaderDelegate extends SliverPersistentHeaderDelegate {

@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
+import 'package:sambhavtask/core/utils/navigation/goRouter.dart';
 import 'package:sambhavtask/features/shop_screen/presentation/view/widgets/most_popular_product.dart';
 import 'package:sambhavtask/features/shop_screen/presentation/view/widgets/popular_stores_card.dart';
 import 'package:sambhavtask/features/widgets/section_see_all_header.dart';
@@ -24,7 +26,10 @@ class PopularStoresSection extends StatelessWidget {
             shrinkWrap: true,
             itemCount: 5,
             itemBuilder: (context, index) {
-              return PopularStoresCard();
+              return InkWell(
+                onTap: () => context.push(AppRouter.slideDetails1),
+                child: PopularStoresCard(),
+              );
             },
           ),
         ),

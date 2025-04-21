@@ -24,31 +24,29 @@ class _ShopScreenState extends State<ShopScreen> {
     return Scaffold(
       backgroundColor: Colors.white,
       body: SafeArea(
-        child: NestedScrollView(
-          headerSliverBuilder: (BuildContext context, bool innerBoxIsScrolled) {
-            return [
-              SliverAppBar(
-                surfaceTintColor: Colors.white,
-                automaticallyImplyLeading: false,
-                floating: false,
-                pinned: false,
-                elevation: 0.0,
-                flexibleSpace: FlexibleSpaceBar(
-                  collapseMode:
-                      CollapseMode.parallax, // Smooth scrolling effect
-                  background: ShopeLocationAndNotifications(),
-                ),
+        child: CustomScrollView(
+          slivers: [
+            // Top Shop Location & Notification
+            SliverAppBar(
+              surfaceTintColor: Colors.white,
+              automaticallyImplyLeading: false,
+              elevation: 0.0,
+              floating: true,
+              flexibleSpace: FlexibleSpaceBar(
+                collapseMode: CollapseMode.parallax,
+                background: ShopeLocationAndNotifications(),
               ),
+            ),
 
-              SliverPersistentHeader(
-                pinned: true,
-                delegate: SearchHeaderDelegate(),
-              ),
-            ];
-          },
-          body: SingleChildScrollView(
-            child: Column(
-              children: [
+            // Search bar pinned
+            SliverPersistentHeader(
+              pinned: true,
+              delegate: SearchHeaderDelegate(),
+            ),
+
+            // Main body content
+            SliverList(
+              delegate: SliverChildListDelegate([
                 FirstImageSliderWithIndicator(),
                 HorizontalCategoriesList(),
                 MostPopularProduct(),
@@ -63,9 +61,10 @@ class _ShopScreenState extends State<ShopScreen> {
                 SpecialOffer(),
                 SizedBox(height: 16),
                 TopOffersNearMe(),
-              ],
+                SizedBox(height: 16),
+              ]),
             ),
-          ),
+          ],
         ),
       ),
     );
